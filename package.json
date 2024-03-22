@@ -1,0 +1,53 @@
+{
+  "name": "nisicorporis",
+  "author": "PatriciaPfeffer",
+  "version": "1.0.0",
+  "description": "jsdoc-annotated source in, markdown API docs out.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KennedyQuitzon/nisicorporis.git"
+  },
+  "main": "main",
+  "bin": {
+    "jsdoc2md": "bin.js"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "test-runner es5/test/*.js",
+    "docs": "node src/bin/cli.js --separators src/lib/jsdoc-to-markdown.js > docs/API.md; echo ",
+    "cover": "istanbul cover ./node_modules/.bin/test-runner src/test/*.js && cat coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage; echo",
+    "es5": "rm -rf es5 && babel --presets babel-preset-es2015 --no-comments src --out-dir es5"
+  },
+  "keywords": [
+    "jsdoc",
+    "markdown",
+    "api",
+    "enim",
+    "javascript",
+    "fuga",
+    "fuga"
+  ],
+  "dependencies": {
+    "array-back": "^1.0.3",
+    "command-line-tool": "~0.6.3",
+    "config-master": "^2.0.3",
+    "core-js": "^2.4.1",
+    "dmd": "^2.0.3-0",
+    "feature-detect-es6": "^1.3.1",
+    "jsdoc-api": "^1.2.3",
+    "jsdoc-parse": "^2.0.5-0",
+    "usage-stats": "~0.1.0",
+    "walk-back": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.13.2",
+    "coveralls": "^2.11.12",
+    "test-runner": "~0.1.11"
+  },
+  "standard": {
+    "ignore": [
+      "es5"
+    ]
+  },
+  "homepage": "https://github.com/KennedyQuitzon/nisicorporis.git"
+}
